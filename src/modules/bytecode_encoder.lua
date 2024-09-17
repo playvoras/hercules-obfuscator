@@ -2,7 +2,7 @@ local BytecodeEncoder = {}
 
 function BytecodeEncoder.process(code)
     local function encode_to_bytecode(block)
-        local func, load_error = load(block) 
+        local func, load_error = loadstring(block) 
         if not func then
             error("Failed to compile block: " .. load_error)
         end

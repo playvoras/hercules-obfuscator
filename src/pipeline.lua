@@ -11,10 +11,14 @@ local DynamicCodeGenerator = require("modules/dynamic_code_generator")
 local BytecodeEncoder = require("modules/bytecode_encoder")
 local Watermarker = require("modules/watermark")
 local Compressor = require("modules/compressor")
+local StringToExpressions = require("modules/StringToExpressions")
 
 local Pipeline = {}
 
 function Pipeline.process(code)
+    if config.get("settings.StringToExpressions.enabled") then
+        code = StringToExpressions.process(code)
+    end
     if config.get("settings.string_encoding.enabled") then
         code = StringEncoder.process(code)
     end

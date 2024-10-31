@@ -10,6 +10,9 @@ config.settings = {
         enabled = true,
         max_fake_blocks = 6,
     },
+    StringToExpressions = {
+        enabled = true,
+    },
     string_encoding = {
         enabled = true,
     },

@@ -60,6 +60,7 @@ local function print_result(input, output, time, overwrite, custom_file, sanity_
     print(line)
 
     local settings = {
+        { "StringToExpressions", config.get("settings.StringToExpressions.enabled") },
         { "Control Flow", config.get("settings.control_flow.enabled") },
         { "String Encoding", config.get("settings.string_encoding.enabled") },
         { "Variable Renaming", config.get("settings.variable_renaming.enabled") },

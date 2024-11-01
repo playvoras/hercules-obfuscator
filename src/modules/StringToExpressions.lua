@@ -7,6 +7,10 @@ local math_methods = {
     mul_div = function(char)
         return (char % 2 == 0) and string.format("(%d * %d + %d)", math.floor(char / 2), 2, char % 2) or string.format("(%d * %d - %d)", math.ceil(char / 2), 2, 2 - char % 2)
     end,
+    pow_mod = function(char)
+        local base = math.ceil(math.sqrt(char))
+        return string.format("(%d ^ 2 - %d)", base, base * base - char)
+    end,
 }
 
 local function get_random_method()

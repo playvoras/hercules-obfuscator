@@ -11,6 +11,9 @@ local math_methods = {
         local base = math.ceil(math.sqrt(char))
         return string.format("(%d ^ 2 - %d)", base, base * base - char)
     end,
+    wtf_add = function(char)
+        return string.format("((%d + %d) + %d)", char - 4, 2, 2)
+    end,
 }
 
 local function get_random_method()

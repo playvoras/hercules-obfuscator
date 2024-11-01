@@ -4,14 +4,8 @@ local math_methods = {
     add_sub = function(char)
         return (char % 2 == 0) and string.format("(%d + %d)", char - 5, 5) or string.format("(%d - %d)", char + 3, 3)
     end,
-    multiply = function(char)
-        return string.format("(%d * %d)", char, 1)
-    end,
-    div_add = function(char)
-        return (char % 2 == 0) and string.format("(%d / %d)", char * 2, 2) or string.format("(%d + %d)", char - 1, 1)
-    end,
-    mod_mul = function(char)
-        return (char % 3 == 0) and string.format("(%d %% %d)", char + 4, 3) or string.format("(%d * %d)", char - 2, 1)
+    mul_div = function(char)
+        return (char % 2 == 0) and string.format("(%d * %d + %d)", math.floor(char / 2), 2, char % 2) or string.format("(%d * %d - %d)", math.ceil(char / 2), 2, 2 - char % 2)
     end,
 }
 

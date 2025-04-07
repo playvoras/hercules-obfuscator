@@ -131,6 +131,7 @@ local function printcliresult(input, output, time, options)
         { "Watermark", config.get("settings.watermark_enabled") },
         { "Function Wrapping", config.get("settings.WrapInFunction.enabled") },
         { "Virtual Machine", config.get("settings.VirtualMachine.enabled") },
+        { "Number To Hex", config.get("settings.numbertohex.enabled") },
     }
 
     local max_length = 0

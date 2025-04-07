@@ -14,6 +14,7 @@ local Compressor = require("modules/compressor")
 local StringToExpressions = require("modules/StringToExpressions")
 local WrapInFunction = require("modules/WrapInFunction")
 local VirtualMachinery = require("modules/VMGenerator")
+local numbertohex = require("modules/numbertohex")
 
 local Pipeline = {}
 
@@ -74,6 +75,10 @@ function Pipeline.process(code)
     
     if config.get("settings.watermark_enabled") then
         code = Watermarker.process(code)
+    end
+
+    if config.get("settings.numbertohex") then
+        code = numbertohex.process(code)
     end
     
     return code

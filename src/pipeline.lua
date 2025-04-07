@@ -77,7 +77,7 @@ function Pipeline.process(code)
         code = Watermarker.process(code)
     end
 
-    if config.get("settings.numbertohex") then
+    if config.get("settings.numbertohex.enabled") then
         code = numbertohex.process(code)
     end
     

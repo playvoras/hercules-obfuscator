@@ -50,6 +50,9 @@ config.settings = {
     },
     compressor = {
         enabled = true,
+    },
+    numbertohex = {
+        enabled = true,
     }
 }
 
